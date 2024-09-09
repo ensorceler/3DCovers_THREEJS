@@ -120,6 +120,7 @@ const ThreeModel = ({
   }, [submitCounter]);
 
   useEffect(() => {
+    useGLTF.preload(gltfFilePath);
     setModelConfig(getConfigurationByModelPath(gltfFilePath));
   }, [gltfFilePath]);
 
@@ -144,7 +145,7 @@ export default function ThreeCanvas({
 
   useEffect(() => {
     setGLTFFilePath("/3d_models/" + model3DFile);
-    useGLTF.preload("/3d_models/" + model3DFile);
+    //useGLTF.preload("/3d_models/" + model3DFile);
   }, [model3DFile]);
 
   return (

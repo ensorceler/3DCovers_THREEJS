@@ -29,7 +29,9 @@ export default function ModelPage() {
 
   const [textContent, setTextContent] = useState("");
   const [imageFile, setImageFile] = useState("");
+
   const [submitCounter, setSubmitCounter] = useState(0);
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   function handleFileChange(e: any) {
     console.log(e.target.files);
@@ -42,11 +44,11 @@ export default function ModelPage() {
 
   const handleSubmit = () => {
     setSubmitCounter((p) => p + 1);
+    setOpenDrawer(false);
   };
 
   const handleTrigger = () => {
-    setTextContent("");
-    setImageFile("");
+    setOpenDrawer(true);
   };
 
   useEffect(() => {
@@ -95,7 +97,11 @@ export default function ModelPage() {
                   Edit Using Design Tool
                 </Button>
               </div>
-              <Drawer direction="right" shouldScaleBackground={false}>
+              <Drawer
+                direction="right"
+                shouldScaleBackground={false}
+                open={openDrawer}
+              >
                 <DrawerTrigger onClick={handleTrigger}>
                   <div className="px-4 py-2 bg-indigo-400 rounded-md w-64">
                     Personalize
@@ -125,7 +131,7 @@ export default function ModelPage() {
                   </div>
                   <DrawerFooter className="w-fit p-0 flex flex-row gap-2">
                     <Button onClick={handleSubmit}>Submit</Button>
-                    <DrawerClose>
+                    <DrawerClose onClick={() => setOpenDrawer(false)}>
                       <div className="bg-red-800 rounded-md px-4 py-2">
                         Cancel
                       </div>

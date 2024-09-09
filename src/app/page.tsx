@@ -35,8 +35,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-row justify-center w-screen">
-      <div className="w-full h-full flex flex-col gap-5 mx-6 my-4">
+    <main className="w-screen h-screen m-auto flex flex-row justify-center">
+      <div className="flex flex-col gap-5 mx-6 my-4">
         <h1 className="text-4xl font-semibold">List of Models</h1>
         <div className="flex flex-row flex-wrap gap-3 ">
           {modelState.map(
