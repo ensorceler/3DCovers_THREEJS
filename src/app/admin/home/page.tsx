@@ -40,7 +40,8 @@ export default function AdminHomePage() {
     const response = await res.json();
     console.log("response =>", response);
     if (response.data !== null) {
-      setModelState(response.data);
+      const models = JSON.parse(response.data);
+      setModelState(models);
     }
   };
 
