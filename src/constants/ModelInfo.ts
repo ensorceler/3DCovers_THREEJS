@@ -4,6 +4,7 @@ export interface ModelsInfo {
   modelLink: string;
   model3DFile: string;
   configuration: ModelConfiguration;
+  interactiveLink?: string;
 }
 
 export interface ModelConfiguration {
@@ -37,6 +38,7 @@ export const modelsInfo: ModelsInfo[] = [
         canvasFillTextY: 0.35 * 800,
       },
     },
+    interactiveLink: "p2-type1",
   },
   {
     modelName: "P3 Type 1",
@@ -54,6 +56,7 @@ export const modelsInfo: ModelsInfo[] = [
         canvasFillTextY: 0.5 * 1200,
       },
     },
+    interactiveLink: "p3-type1",
   },
   {
     modelName: "P3 Type 3",
@@ -71,6 +74,7 @@ export const modelsInfo: ModelsInfo[] = [
         canvasFillTextY: 0.2 * 1200,
       },
     },
+    interactiveLink: "p3-type3",
   },
   {
     modelName: "P4 Type 1",
@@ -88,6 +92,7 @@ export const modelsInfo: ModelsInfo[] = [
         canvasFillTextY: 0.4 * 600,
       },
     },
+    interactiveLink: "p4-type1",
   },
   {
     modelName: "P5 Type 1",
@@ -105,6 +110,7 @@ export const modelsInfo: ModelsInfo[] = [
         canvasFillTextY: 0.35 * 800,
       },
     },
+    interactiveLink: "p5-type1",
   },
   {
     modelName: "P9 Type 1",
@@ -122,6 +128,7 @@ export const modelsInfo: ModelsInfo[] = [
         canvasFillTextY: 0.35 * 800,
       },
     },
+    interactiveLink: "p9-type1",
   },
   {
     modelName: "Model 1",
@@ -139,6 +146,7 @@ export const modelsInfo: ModelsInfo[] = [
         canvasFillTextY: 0.25 * 800,
       },
     },
+    interactiveLink: "model-1",
   },
   {
     modelName: "Model 2",
@@ -157,5 +165,6 @@ export const modelsInfo: ModelsInfo[] = [
         canvasFillTextY: 0.25 * 800,
       },
     },
+    interactiveLink: "model-2",
   },
 ];

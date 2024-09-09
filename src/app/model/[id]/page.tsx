@@ -57,6 +57,18 @@ export default function ModelPage() {
     setModel3DFile(currentModel.model3DFile);
   }, []);
 
+  const goToInteractive2DPage = () => {
+    const currentModel = modelsInfo.filter(
+      (item) => item.modelLink === pathName
+    )[0];
+    window.open(
+      "http://intractve3d-testproject.s3-website.ap-south-1.amazonaws.com/" +
+        currentModel?.interactiveLink +
+        ".html",
+      "_blank"
+    );
+  };
+
   return (
     <div className="flex justify-center gap-6 mt-28">
       <div className="flex gap-6 items-start">
@@ -75,7 +87,11 @@ export default function ModelPage() {
             </CardHeader>
             <CardContent className="flex flex-col gap-3">
               <div>
-                <Button variant="default" className="w-64">
+                <Button
+                  variant="default"
+                  className="w-64"
+                  onClick={goToInteractive2DPage}
+                >
                   Edit Using Design Tool
                 </Button>
               </div>
