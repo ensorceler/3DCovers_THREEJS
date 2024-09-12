@@ -34,8 +34,13 @@ export default function ModelPage() {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   function handleFileChange(e: any) {
-    console.log(e.target.files);
+    //console.log(e.target.files);
     setImageFile(URL.createObjectURL(e.target.files[0]));
+  }
+
+  function handleReplaceImageBtn(e: any) {
+    setImageFile(URL.createObjectURL(e.target.files[0]));
+    setSubmitCounter((p) => p + 1);
   }
 
   function handleTextChange(e: BaseSyntheticEvent) {
@@ -140,7 +145,18 @@ export default function ModelPage() {
                 </DrawerContent>
               </Drawer>
             </CardContent>
-            <CardFooter></CardFooter>
+            <CardFooter>
+              {submitCounter > 0 && imageFile !== "" && (
+                <div className="grid w-full max-w-sm items-center gap-1.5">
+                  <Label htmlFor="picture">Replace Image</Label>
+                  <Input
+                    id="picture"
+                    type="file"
+                    onChange={handleReplaceImageBtn}
+                  />
+                </div>
+              )}
+            </CardFooter>
           </Card>
         </div>
       </div>

@@ -40,7 +40,7 @@ const ThreeModel = ({
     null
   );
   //const [imageTexture, setImageTexture] = useState("");
-  useFrame(() => ((ref.current! as any).rotation.y += 0.001));
+  useFrame(() => ((ref.current! as any).rotation.y += 0.00025));
 
   // Here, we can access the camera via the useThree hook
   useThree(({ camera }) => {
